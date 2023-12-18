@@ -1,0 +1,19 @@
+{
+  "name": "@hexlet/code",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "project #1",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexlet",
+    "project",
+    "brain games"
+  ],
+  "author": "hexlet_student_Ekaterina_V",
+  "license": "ISC"
+}
