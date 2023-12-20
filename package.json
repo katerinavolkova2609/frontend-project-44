@@ -15,5 +15,13 @@
     "brain games"
   ],
   "author": "hexlet_student_Ekaterina_V",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "github:anseki/readline-sync"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
 }
