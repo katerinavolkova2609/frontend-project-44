@@ -1,14 +1,9 @@
 import readlineSync from "readline-sync";
 
-const getUserName = () => {
+const gameSession = (rules, collOfNumbers) => {
   console.log("Welcome to the Brain Games!");
   const name = readlineSync.question("May I have your name? ");
   console.log("Hello, " + name + "!");
-  return name;
-};
-
-const gameSession = (rules, collOfNumbers) => {
-  let name = getUserName();
   rules();
   for (let i = 0; i <= 2; i += 1) {
     console.log("Question: " + collOfNumbers[i][0]);
