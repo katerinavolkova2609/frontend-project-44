@@ -1,9 +1,7 @@
 import { gameSession } from "../index.js";
 
 const isPrimeNum = () => {
-const rules = () =>
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
+const rules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 const getCollOfNumbers = () => {
   const collOfNumbers = [];
   for (let i = 0; i <= 2; i += 1) {
@@ -16,13 +14,11 @@ const getCollOfNumbers = () => {
     }
     let question = num;
     let correctAnswer = divisors.length === 2 ? "yes" : "no";
-
     collOfNumbers[i] = [];
     collOfNumbers[i].push(question, correctAnswer);
   }
   return collOfNumbers;
 };
-
 let collOfNumbers = getCollOfNumbers();
 gameSession(rules, collOfNumbers);
 };
