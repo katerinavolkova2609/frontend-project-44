@@ -4,15 +4,16 @@ const gameSession = (rules, collOfNumbers) => {
   console.log("Welcome to the Brain Games!");
   const name = readlineSync.question("May I have your name? ");
   console.log("Hello, " + name + "!");
-  rules();
+  console.log(rules);
   for (let i = 0; i <= 2; i += 1) {
-    console.log("Question: " + collOfNumbers[i][0]);
+    const [question, correctAnswer] = collOfNumbers[i];
+    console.log("Question: " + question);
     const answer = readlineSync.question("Your answer: ");
-    if (collOfNumbers[i][1] === answer) {
+    if (correctAnswer === answer) {
       console.log("Correct!");
     } else
       return console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${collOfNumbers[i][1]}'.\nLet's try again, ${name}!`
+        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`
       );
   }
   return console.log(`Congratulations, ${name}!`);
