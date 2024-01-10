@@ -2,8 +2,7 @@ import { gameSession } from "../index.js";
 import { getRandomNumber } from "../utils.js";
 
 const isPrimeNum = () => {
-const rules = () =>
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getCollOfNumbers = () => {
   const collOfNumbers = [];

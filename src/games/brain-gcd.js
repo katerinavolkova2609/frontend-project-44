@@ -2,8 +2,7 @@ import { gameSession } from "../index.js";
 import { getRandomNumber } from "../utils.js";
 
 const findCommonDivisor = () => {
-  const rules = () =>
-    console.log("Find the greatest common divisor of given numbers.");
+  const rules = "Find the greatest common divisor of given numbers.";
 
   const getCollOfNumbers = () => {
     const collOfNumbers = [];

@@ -2,7 +2,7 @@ import { gameSession } from "../index.js";
 import { getRandomNumber } from "../utils.js";
 
 const calculator = () => {
-  const rules = () => console.log("What is the result of the expression?");
+  const rules = "What is the result of the expression?";
 
   const getCollOfNumbers = () => {
     let collOfNumbers = [];

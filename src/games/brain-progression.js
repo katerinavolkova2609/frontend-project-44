@@ -2,7 +2,7 @@ import { gameSession } from "../index.js";
 import { getRandomNumber } from "../utils.js";
 
 const findMissedNum = () => {
-  const rules = () => console.log("What number is missing in the progression?");
+  const rules = "What number is missing in the progression?";
 
   const getCollOfNumbers = () => {
     const collOfNumbers = [];

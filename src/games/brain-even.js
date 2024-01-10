@@ -2,8 +2,7 @@ import { gameSession } from "../index.js";
 import { getRandomNumber } from "../utils.js";
 
 const isEvenNumber = () => {
-  const rules = () =>
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const getCollOfNumbers = () => {
     let collOfNumbers = [];
