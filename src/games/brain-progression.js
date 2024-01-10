@@ -15,7 +15,7 @@ const findMissedNum = () => {
         progression.push(num);
         num += diffBetweemNumbers;
       }
-      let hiddenNum = getRandomNumber(1, 10);
+      let hiddenNum = getRandomNumber(0, 9);
       let correctAnswer = progression[hiddenNum].toString();
       progression[hiddenNum] = "..";
       let question = progression.join(" ");
