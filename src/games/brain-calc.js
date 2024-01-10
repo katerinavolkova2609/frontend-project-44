@@ -1,4 +1,5 @@
 import { gameSession } from "../index.js";
+import { getRandomNumber } from "../utils.js";
 
 const calculator = () => {
   const rules = () => console.log("What is the result of the expression?");
@@ -6,8 +7,8 @@ const calculator = () => {
   const getCollOfNumbers = () => {
     let collOfNumbers = [];
     for (let i = 0; i <= 2; i += 1) {
-      let num1 = Math.floor(Math.random() * 10);
-      let num2 = Math.floor(Math.random() * 10);
+      let num1 = getRandomNumber(1, 20);
+      let num2 = getRandomNumber(1, 20);
 
       const operators = ["+", "-", "*"];
       let operator = operators[Math.floor(Math.random() * 3)];

@@ -1,4 +1,5 @@
 import { gameSession } from "../index.js";
+import { getRandomNumber } from "../utils.js";
 
 const isEvenNumber = () => {
   const rules = () =>
@@ -7,7 +8,7 @@ const isEvenNumber = () => {
   const getCollOfNumbers = () => {
     let collOfNumbers = [];
     for (let i = 0; i <= 2; i += 1) {
-      let randomNum = Math.floor(Math.random() * 100);
+      let randomNum = getRandomNumber(1, 100);
       let evenNum = randomNum % 2 === 0;
       let correctAnswer = evenNum ? "yes" : "no";
       collOfNumbers[i] = [];

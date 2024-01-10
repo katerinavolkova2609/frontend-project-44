@@ -1,4 +1,5 @@
 import { gameSession } from "../index.js";
+import { getRandomNumber } from "../utils.js";
 
 const findCommonDivisor = () => {
   const rules = () =>
@@ -8,8 +9,8 @@ const findCommonDivisor = () => {
     const collOfNumbers = [];
     const commonDivisors = [];
     for (let i = 0; i <= 2; i += 1) {
-      let num1 = Math.floor(Math.random() * (100 - 1) + 1);
-      let num2 = Math.floor(Math.random() * (100 - 1) + 1);
+      let num1 = getRandomNumber(1, 100);
+      let num2 = getRandomNumber(1, 100);
       let question = num1 + " " + num2;
       for (let j = 1; j <= 100; j += 1) {
         let divisor;
