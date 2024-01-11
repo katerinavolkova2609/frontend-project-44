@@ -2,7 +2,7 @@ import gameSession from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getProgression = (num, diffBetweemNumbers) => {
-  const number = num;
+  let number = num;
   const progression = [];
   for (let i = 0; i < 10; i += 1) {
     progression.push(number);
