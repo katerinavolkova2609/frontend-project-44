@@ -13,12 +13,12 @@ const gameSession = (getQuestionAndAnswer, rules) => {
     if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default gameSession;
