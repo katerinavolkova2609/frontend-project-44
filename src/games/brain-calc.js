@@ -1,40 +1,30 @@
-import { gameSession } from "../index.js";
-import { getRandomNumber } from "../utils.js";
+import gameSession from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-const calculator = () => {
-  const rules = "What is the result of the expression?";
-
-  const getCollOfNumbers = () => {
-    let collOfNumbers = [];
-    for (let i = 0; i <= 2; i += 1) {
-      let num1 = getRandomNumber(1, 20);
-      let num2 = getRandomNumber(1, 20);
-
-      const operators = ["+", "-", "*"];
-      let operator = operators[Math.floor(Math.random() * 3)];
-      let question = num1 + " " + operator + " " + num2;
-
-      let correctAnswer;
-      switch (operator) {
-        case "+":
-          correctAnswer = num1 + num2;
-          break;
-        case "-":
-          correctAnswer = num1 - num2;
-          break;
-        case "*":
-          correctAnswer = num1 * num2;
-          break;
-      }
-      collOfNumbers[i] = [];
-      collOfNumbers[i].push(question, correctAnswer.toString());
-    }
-    return collOfNumbers;
-  };
-
-  let collOfNumbers = getCollOfNumbers();
-  gameSession(rules, collOfNumbers);
+const calc = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+  }
 };
 
+const getQuestionAndAnswer = () => {
+  const num1 = getRandomNumber(1, 20);
+  const num2 = getRandomNumber(1, 20);
+  const operators = ['+', '-', '*'];
+  const operator = operators[Math.floor(Math.random() * 3)];
+  const question = `${num1} ${operator} ${num2}`;
+  const result = calc(num1, num2, operator).toString();
+  return [question, result];
+};
 
-export { calculator };
+const calculate = () => {
+const rules = 'What is the result of the expression?';
+gameSession(getQuestionAndAnswer, rules)
+};
+
+export default calculate ;

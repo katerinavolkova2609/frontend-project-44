@@ -1,32 +1,27 @@
-import { gameSession } from "../index.js";
-import { getRandomNumber } from "../utils.js";
+import gameSession from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-const findCommonDivisor = () => {
-  const rules = "Find the greatest common divisor of given numbers.";
-
-  const getCollOfNumbers = () => {
-    const collOfNumbers = [];
-    const commonDivisors = [];
-    for (let i = 0; i <= 2; i += 1) {
-      let num1 = getRandomNumber(1, 100);
-      let num2 = getRandomNumber(1, 100);
-      let question = num1 + " " + num2;
-      for (let j = 1; j <= 100; j += 1) {
-        let divisor;
-        if (num1 % j === 0 && num2 % j === 0) {
-          divisor = j;
-          commonDivisors.push(divisor);
-        }
-      }
-      let correctAnswer = commonDivisors[commonDivisors.length - 1].toString();
-      collOfNumbers[i] = [];
-      collOfNumbers[i].push(question, correctAnswer);
+const findGreatestDiv = (num1, num2) => {
+  const commonDivisors = [];
+  for (let i = 1; i <= 100; i += 1) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      commonDivisors.push(i);
     }
-    return collOfNumbers;
-  };
-
-  let collOfNumbers = getCollOfNumbers();
-  gameSession(rules, collOfNumbers);
+  }
+  return commonDivisors[commonDivisors.length - 1];
 };
 
-export { findCommonDivisor };
+const getQuestionAndAnswer = () => {
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
+  const question = `${num1} ${num2}`;
+  const result = findGreatestDiv(num1, num2).toString();
+  return [question, result];
+};
+
+const findCommonDivisor = () => {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  gameSession(getQuestionAndAnswer, rules);
+};
+
+export default findCommonDivisor;

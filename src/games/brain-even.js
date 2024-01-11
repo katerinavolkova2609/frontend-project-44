@@ -1,23 +1,17 @@
-import { gameSession } from "../index.js";
-import { getRandomNumber } from "../utils.js";
+import gameSession from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-const isEvenNumber = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEven = (number) => (number % 2 === 0);
 
-  const getCollOfNumbers = () => {
-    let collOfNumbers = [];
-    for (let i = 0; i <= 2; i += 1) {
-      let randomNum = getRandomNumber(1, 100);
-      let evenNum = randomNum % 2 === 0;
-      let correctAnswer = evenNum ? "yes" : "no";
-      collOfNumbers[i] = [];
-      collOfNumbers[i].push(randomNum, correctAnswer);
-    }
-    return collOfNumbers;
-  };
-
-  let collOfNumbers = getCollOfNumbers();
-  gameSession(rules, collOfNumbers);
+const getQuestionAndAnswer= () => {
+  const randomNum = getRandomNumber(1, 100);
+  const result = isEven(randomNum) ? 'yes' : 'no';
+  return [`${randomNum}`, result];
 };
 
-export { isEvenNumber };
+const isEvenNum = () => {
+  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+  gameSession(getQuestionAndAnswer, rules);
+};
+
+export default isEvenNum;

@@ -1,32 +1,29 @@
-import { gameSession } from "../index.js";
-import { getRandomNumber } from "../utils.js";
+import gameSession from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-const findMissedNum = () => {
-  const rules = "What number is missing in the progression?";
-
-  const getCollOfNumbers = () => {
-    const collOfNumbers = [];
-
-    for (let i = 0; i <= 2; i += 1) {
-      const progression = [];
-      let num = getRandomNumber(1, 10);
-      let diffBetweemNumbers = getRandomNumber(2, 10);
-      for (let j = 0; j < 10; j += 1) {
-        progression.push(num);
-        num += diffBetweemNumbers;
-      }
-      let hiddenNum = getRandomNumber(0, 9);
-      let correctAnswer = progression[hiddenNum].toString();
-      progression[hiddenNum] = "..";
-      let question = progression.join(" ");
-      collOfNumbers[i] = [];
-      collOfNumbers[i].push(question, correctAnswer);
-    }
-    return collOfNumbers;
-  };
-
-  let collOfNumbers = getCollOfNumbers();
-  gameSession(rules, collOfNumbers);
+const getProgression = (num , diffBetweemNumbers) => {
+  const progression = [];
+  for (let i = 0; i < 10; i += 1) {
+    progression.push(num);
+    num += diffBetweemNumbers;
+  }
+  return progression;
 };
 
-export { findMissedNum };
+const getQuestionAndAnswer = () => {
+  const num = getRandomNumber(1, 10);
+  const diffBetweemNumbers = getRandomNumber(2, 10);
+  const hiddenNum = getRandomNumber(0, 9);
+  const progression = getProgression(num, diffBetweemNumbers);
+  const correctAnswer = progression[hiddenNum].toString();
+  progression[hiddenNum] = '..';
+  const question = progression.join(' ');
+  return [question, correctAnswer];
+};
+
+const findMissedNum = () => {
+  const rules = 'What number is missing in the progression?';
+  gameSession(getQuestionAndAnswer, rules);
+};
+
+export default findMissedNum;
