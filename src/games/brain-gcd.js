@@ -1,5 +1,5 @@
 import gameSession from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const findGreatestDiv = (num1, num2) => {
   const commonDivisors = [];

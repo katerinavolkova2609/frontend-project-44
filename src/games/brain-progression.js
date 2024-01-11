@@ -1,11 +1,12 @@
 import gameSession from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
-const getProgression = (num , diffBetweemNumbers) => {
+const getProgression = (num, diffBetweemNumbers) => {
+  const number = num;
   const progression = [];
   for (let i = 0; i < 10; i += 1) {
-    progression.push(num);
-    num += diffBetweemNumbers;
+    progression.push(number);
+    number += diffBetweemNumbers;
   }
   return progression;
 };

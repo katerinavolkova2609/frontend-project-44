@@ -1,5 +1,5 @@
 import gameSession from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const calc = (num1, num2, operator) => {
   switch (operator) {
@@ -9,6 +9,8 @@ const calc = (num1, num2, operator) => {
       return num1 - num2;
     case '*':
       return num1 * num2;
+    default:
+      return null;
   }
 };
 
@@ -23,8 +25,8 @@ const getQuestionAndAnswer = () => {
 };
 
 const calculate = () => {
-const rules = 'What is the result of the expression?';
-gameSession(getQuestionAndAnswer, rules)
+  const rules = 'What is the result of the expression?';
+  gameSession(getQuestionAndAnswer, rules);
 };
 
-export default calculate ;
+export default calculate;

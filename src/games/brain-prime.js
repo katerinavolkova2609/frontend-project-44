@@ -1,5 +1,5 @@
-import gameSession from "../index.js";
-import { getRandomNumber } from "../utils.js";
+import gameSession from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const countDivisors = (num) => {
   const divisors = [];
