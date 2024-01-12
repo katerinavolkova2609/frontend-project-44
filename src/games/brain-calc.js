@@ -1,7 +1,7 @@
-import gameSession from '../index.js';
+import doGameSession from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const calc = (num1, num2, operator) => {
+const calcValues = (num1, num2, operator) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -10,23 +10,25 @@ const calc = (num1, num2, operator) => {
     case '*':
       return num1 * num2;
     default:
-      return null;
+      throw new Error(`Unexpected sign: '${operator}'!`);
   }
 };
 
 const getQuestionAndAnswer = () => {
-  const num1 = getRandomNumber(1, 20);
-  const num2 = getRandomNumber(1, 20);
+  const minValue = 1;
+  const maxValue = 20;
+  const num1 = getRandomNumber(minValue, maxValue);
+  const num2 = getRandomNumber(minValue, maxValue);
   const operators = ['+', '-', '*'];
-  const operator = operators[Math.floor(Math.random() * 3)];
+  const operator = operators[getRandomNumber(0, 3)];
   const question = `${num1} ${operator} ${num2}`;
-  const result = calc(num1, num2, operator).toString();
+  const result = calcValues(num1, num2, operator).toString();
   return [question, result];
 };
 
-const calculate = () => {
-  const rules = 'What is the result of the expression?';
-  gameSession(getQuestionAndAnswer, rules);
+const doCalc = () => {
+  const rule = 'What is the result of the expression?';
+  doGameSession(getQuestionAndAnswer, rule);
 };
 
-export default calculate;
+export default doCalc;

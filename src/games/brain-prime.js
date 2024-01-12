@@ -1,4 +1,4 @@
-import gameSession from '../index.js';
+import doGameSession from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const countDivisors = (num) => {
@@ -12,15 +12,17 @@ const countDivisors = (num) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const num = getRandomNumber(1, 100);
+  const minValue = 1;
+  const maxValue = 100;
+  const num = getRandomNumber(minValue, maxValue);
   const question = num;
   const correctAnswer = countDivisors(num) === 2 ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
 const isPrimeNum = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  gameSession(getQuestionAndAnswer, rules);
+  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  doGameSession(getQuestionAndAnswer, rule);
 };
 
 export default isPrimeNum;

@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 
-const gameSession = (getQuestionAndAnswer, rules) => {
+const doGameSession = (getQuestionAndAnswer, rule) => {
   const roundOfGame = 3;
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(rules);
+  console.log(rule);
   for (let i = 0; i < roundOfGame; i += 1) {
     const [question, correctAnswer] = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
@@ -21,4 +21,4 @@ const gameSession = (getQuestionAndAnswer, rules) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default gameSession;
+export default doGameSession;
