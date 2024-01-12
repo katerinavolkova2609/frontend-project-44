@@ -1,5 +1,4 @@
 import doGameSession from '../index.js';
-import goGameSession from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getProgression = (num, diffBetweemNumbers) => {

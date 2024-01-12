@@ -8,6 +8,7 @@ const findGreatestDiv = (num1, num2) => {
       return i;
     }
   }
+  return null;
 };
 
 const getQuestionAndAnswer = () => {
